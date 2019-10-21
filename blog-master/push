@@ -1,0 +1,12 @@
+<?php
+
+$count = 2;
+
+if ($argc < $count)
+    die("Не хватает аргументов");
+else if ($argc > $count)
+    die("Много аргументов");
+
+exec("git add .");
+exec("git commit -m \"" . $argv[1] . "\"");
+exec("git push -u origin master");
